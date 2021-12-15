@@ -1,5 +1,10 @@
-import { Button } from "@hellofresh/scm-design-system";
-import React from "react";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Button,
+  Typography,
+} from "@hellofresh/scm-design-system";
 
 function App() {
   return (
@@ -11,6 +16,13 @@ function App() {
         onFocusVisible={function noRefCheck() {}}
         variant="primary"
       />
+
+      <Accordion>
+        <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
+          <Typography>Accordion Test</Typography>
+        </AccordionSummary>
+        <AccordionDetails>Information</AccordionDetails>
+      </Accordion>
     </div>
   );
 }
