@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { createTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { SCMTheme } from "@hellofresh/scm-design-system";
+import { BrowserRouter } from "react-router-dom";
 
 const customTheme = createTheme(SCMTheme);
 
@@ -14,7 +15,9 @@ ReactDOM.render(
     <StyledThemeProvider theme={customTheme}>
       <ThemeProvider theme={customTheme}>
         <CssBaseline />
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </ThemeProvider>
     </StyledThemeProvider>
   </React.StrictMode>,
