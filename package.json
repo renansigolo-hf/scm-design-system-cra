@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@hellofresh/scm-design-system": "^0.2.5",
+    "@hellofresh/scm-design-system": "^0.2.6",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
@@ -23,6 +23,7 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
+    "create:npmrc": "node scripts/create-npmrc",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

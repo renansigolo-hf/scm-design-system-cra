@@ -3,13 +3,11 @@ import {
   AccordionDetails,
   AccordionSummary,
   Alert,
-  AppBar,
   Button,
   Skeleton,
   Typography,
 } from "@hellofresh/scm-design-system";
-// import * as React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 
 function Home() {
   return (
