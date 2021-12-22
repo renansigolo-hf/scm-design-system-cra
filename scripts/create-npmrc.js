@@ -1,4 +1,3 @@
-// CURRENTLY NOT IN USE - CHECK THE TRADE-OFFS WHEN REPLACING THE BASH SCRIPT
 const { writeFileSync, readFile } = require("fs");
 
 const npmrcPath = "./.npmrc";
