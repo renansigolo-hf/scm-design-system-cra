@@ -5,7 +5,7 @@ name: Check PR Title
 
 on:
   pull_request:
-    types: [opened]
+    # types: [opened]
     branches: [main]
   # pull_request_review:
   #   types: [submitted]
