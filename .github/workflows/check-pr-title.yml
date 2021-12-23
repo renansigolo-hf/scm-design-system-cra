@@ -5,13 +5,14 @@ name: Check PR Title
 
 on:
   pull_request:
+    types: [opened, synchronize]
     branches: [main]
   pull_request_review:
     types: [submitted]
     branches: [main]
 
 jobs:
-  build:
+  valid_regex:
     # if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
 
