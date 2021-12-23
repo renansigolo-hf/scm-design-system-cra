@@ -8,6 +8,11 @@ jobs:
     env:
       PR_NUMBER: ${{ github.event.number }}
     steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
       - run: echo "🧑‍💻 GH ${{ github.event.number }}."
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
