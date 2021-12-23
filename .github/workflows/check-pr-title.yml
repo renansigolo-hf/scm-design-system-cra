@@ -5,10 +5,10 @@ name: Check PR Title
 
 on:
   pull_request:
-    # types: [opened]
+    types: [opened, edited]
     branches: [main]
-  # pull_request_review:
-  #   types: [submitted]
+  pull_request_review:
+    types: [submitted]
 
 jobs:
   build:
