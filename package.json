@@ -23,6 +23,7 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
+    "check:pr:title": "node scripts/check-pr-title",
     "create:npmrc": "node scripts/create-npmrc",
     "start": "react-scripts start",
     "build": "react-scripts build",
