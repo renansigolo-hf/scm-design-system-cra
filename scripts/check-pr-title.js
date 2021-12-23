@@ -8,7 +8,9 @@ async function run() {
   );
   const title = github.context.payload.pull_request?.title;
   if (!regexPattern.test(title)) {
-    core.setFailed("Invalid PR Title!");
+    core.setFailed(
+      `The PR Title ${title} doesn't follow our standard naming convention. Please add a title with the following format: [<JIRA-ID>] <scope>: <short summary>[PIKA|KAT|KUS] (build|ci|docs|feat|fix|perf|refactor|test): short description. E.g.: [KAT-123] feat: add new loading component`
+    );
   }
 }
 
