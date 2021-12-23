@@ -14,7 +14,8 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2
-        run: echo running on branch ${GITHUB_REF##*/}
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - run: echo "🧑‍💻 GH HEAD ref ${{ github.head_ref }}."
       - run: echo "🧑‍💻 GH BASE base ${{ github.base_ref }}."
       - run: echo "🧑‍💻 GH ${{ github.context.payload.pull_request }}."
