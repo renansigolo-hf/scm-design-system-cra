@@ -9,8 +9,7 @@ import {
   Skeleton,
   Table,
 } from "@hellofresh/scm-design-system";
-import { BoxCancellation } from "@hellofresh/scm-design-system/dist/components/icons";
-import { Typography, TableBody, TableCell, TableRow } from "@material-ui/core";
+import { TableBody, TableCell, TableRow, Typography } from "@material-ui/core";
 import { Link, Route, Routes } from "react-router-dom";
 
 const TableTemplate = () => {
@@ -126,8 +125,6 @@ function App() {
           variant="primary"
         />
       </Card>
-
-      <BoxCancellation size="small" state="" />
 
       <Routes>
         <Route path="/" element={<Home />} />

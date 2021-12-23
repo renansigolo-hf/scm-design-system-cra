@@ -37,6 +37,3 @@ jobs:
 
       - name: Check PR
         run: node scripts/check-pr-title
-
-      - name: Build packages
-        run: npm run build --if-present
