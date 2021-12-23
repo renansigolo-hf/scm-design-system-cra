@@ -24,16 +24,5 @@ jobs:
           node-version: "16"
           cache: "npm"
 
-      - name: Check .npmrc file
-        run: |
-          chmod +x ./scripts/check-npmrc.bash
-          ./scripts/check-npmrc.bash
-        shell: bash
-
-      - name: Download packages
-        run: npm ci
-        env:
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-
       - name: Check PR
         run: node scripts/check-pr-title
