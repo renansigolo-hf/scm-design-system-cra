@@ -24,5 +24,8 @@ jobs:
           node-version: "16"
           cache: "npm"
 
+      - name: Install packages
+        run: npm i @actions/core @actions/github
+
       - name: Check PR
         run: node scripts/check-pr-title
