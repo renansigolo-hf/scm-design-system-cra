@@ -1,0 +1,32 @@
+name: Master Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        type: choice
+        required: true
+        description: Which environment to deploy to?
+        options:
+          - staging
+          - production
+      use-emoji:
+        type: boolean
+        description: Include 🎉🤣 emojis
+      environment:
+        type: environment
+
+jobs:
+  release_staging:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Release to staging
+        run: echo STAG "${{ github.event.inputs.message }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
+
+  release_production:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Release to production
+        run: echo PROD "${{ github.event.inputs.message }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
