@@ -1,16 +1,16 @@
-name: Mixed inputs
+name: Master Release
 
 on:
   workflow_dispatch:
+    branches: [main]
     inputs:
       name:
         type: choice
-        description: Who to greet
-        options:
-          - monalisa
-          - cschleiden
-      message:
         required: true
+        description: Which environment to deploy to?
+        options:
+          - staging
+          - production
       use-emoji:
         type: boolean
         description: Include 🎉🤣 emojis
