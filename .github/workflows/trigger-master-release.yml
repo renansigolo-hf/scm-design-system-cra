@@ -3,7 +3,7 @@ name: Master Release
 on:
   workflow_dispatch:
     inputs:
-      name:
+      hf-env:
         type: choice
         required: true
         description: Which environment to deploy to?
@@ -22,11 +22,9 @@ jobs:
 
     steps:
       - name: Release to staging
-        run: echo STAG "${{ github.event.inputs.message }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
+        if: ${{ github.event.inputs.hf-env == 'staging' }}
+        run: echo STAG "${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.hf-env }}"
 
-  release_production:
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Release to production
-        run: echo PROD "${{ github.event.inputs.message }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
+        if: ${{ github.event.inputs.hf-env == 'production' }}
+        run: echo PROD "${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.hf-env }}"
